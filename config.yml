@@ -1,0 +1,41 @@
+# ==============================
+#  ScarletShopCore - config.yml
+# ==============================
+
+# Saldo awal pemain (diberikan saat akun pertama kali dibuat)
+starting:
+  money: 1000.0
+  shards: 0
+
+# Format tampilan mata uang. {amount} akan diganti angkanya.
+currency:
+  money-format: "${amount}"
+  shards-format: "{amount} Shards"
+
+gui:
+  balance-name: "&6Saldo Kamu"
+  price-line: "&7Harga: &e{price}"
+  click-line: "&aKlik untuk membeli"
+  back-name: "&cKembali"
+
+messages:
+  prefix: "&8[&cScarletShop&8] &r"
+  no-permission: "&cKamu tidak punya izin untuk itu."
+  player-only: "&cPerintah ini hanya untuk pemain."
+  player-not-found: "&cPemain &e{player} &ctidak ditemukan."
+  invalid-amount: "&cJumlah tidak valid. (Shards harus bilangan bulat)"
+  money-self: "&aUangmu: &e{amount}"
+  money-other: "&aUang &f{player}&a: &e{amount}"
+  shards-self: "&aShards-mu: &d{amount}"
+  shards-other: "&aShards &f{player}&a: &d{amount}"
+  pay-usage: "&cPenggunaan: /pay <pemain> <jumlah> [money|shards]"
+  pay-self: "&cKamu tidak bisa membayar dirimu sendiri."
+  not-enough: "&cSaldo &e{currency} &ckamu tidak cukup."
+  pay-sent: "&aKamu mengirim &e{amount} &ake &f{player}&a."
+  pay-received: "&aKamu menerima &e{amount} &adari &f{player}&a."
+  eco-usage: "&cPenggunaan: /eco <give|take|set> <pemain> <jumlah> [money|shards]"
+  eco-done: "&aSaldo {currency} milik &f{player} &akini: &e{amount}"
+  shop-no-funds: "&cKamu butuh &e{price} &cuntuk membeli ini."
+  shop-bought: "&aKamu membeli &f{item} &aseharga &e{price}&a."
+  shop-inv-full: "&eInventory penuh, sisa item dijatuhkan ke tanah."
+  shop-reloaded: "&aKonfigurasi dan shop berhasil di-reload."

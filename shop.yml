@@ -1,0 +1,116 @@
+# ===========================================================
+#  ScarletShopCore - shop.yml
+#  Setelah mengubah file ini, jalankan:  /shop reload
+# ===========================================================
+#
+#  CARA MENAMBAH ITEM
+#  ------------------
+#  Cari kategori yang diinginkan lalu tambahkan blok baru di bawah "items:".
+#  Nama kunci (mis. "diamond_sword") bebas, tapi harus unik dalam satu kategori.
+#
+#      nama_item:
+#        material: DIAMOND_SWORD     # WAJIB - nama Material Bukkit
+#        amount: 1                   # jumlah item yang diterima (default 1)
+#        price: 750                  # WAJIB - harga
+#        currency: money             # money atau shards (default money)
+#        name: "&bPedang Sakti"      # opsional - nama custom
+#        lore:                       # opsional - deskripsi
+#          - "&7Pedang yang tajam."
+#        enchantments:               # opsional - format NAMA:LEVEL
+#          - "SHARPNESS:4"
+#          - "UNBREAKING:3"
+#        commands:                   # opsional - jika diisi, item TIDAK diberikan,
+#          - "give %player% apple 1" #   melainkan command dijalankan oleh console.
+#                                    #   %player% = nama pembeli
+#
+#  Satu kategori maksimal menampilkan 45 item.
+#  Harga shards harus bilangan bulat.
+# ===========================================================
+
+title: "&8Server Shop"
+
+categories:
+
+  blocks:
+    icon: GRASS_BLOCK
+    name: "&aBlocks"
+    slot: 10
+    items:
+      stone:
+        material: STONE
+        amount: 16
+        price: 50
+        currency: money
+      oak_logs:
+        material: OAK_LOG
+        amount: 32
+        price: 120
+      glass:
+        material: GLASS
+        amount: 16
+        price: 80
+
+  food:
+    icon: COOKED_BEEF
+    name: "&6Food"
+    slot: 12
+    items:
+      steak:
+        material: COOKED_BEEF
+        amount: 16
+        price: 80
+      golden_apple:
+        material: GOLDEN_APPLE
+        amount: 1
+        price: 500
+
+  tools:
+    icon: DIAMOND_PICKAXE
+    name: "&bTools & Gear"
+    slot: 14
+    items:
+      miners_pickaxe:
+        material: DIAMOND_PICKAXE
+        name: "&bMiner's Pickaxe"
+        lore:
+          - "&7Pickaxe andalan para penambang."
+        price: 5000
+        currency: money
+        enchantments:
+          - "EFFICIENCY:4"
+          - "UNBREAKING:3"
+          - "MENDING:1"
+
+  shardshop:
+    icon: AMETHYST_SHARD
+    name: "&dShards Shop"
+    slot: 16
+    items:
+      # Item biasa yang dibeli dengan shards
+      beacon:
+        material: BEACON
+        amount: 1
+        price: 25
+        currency: shards
+
+      # Item "command": menukar shards menjadi uang
+      money_pack:
+        material: GOLD_INGOT
+        name: "&6Paket Uang $10.000"
+        lore:
+          - "&7Tukar shards dengan uang."
+        price: 10
+        currency: shards
+        commands:
+          - "eco give %player% 10000 money"
+
+      # Item "command": rank (contoh memakai LuckPerms, sesuaikan dengan plugin rank-mu)
+      vip_rank:
+        material: NETHER_STAR
+        name: "&6VIP Rank"
+        lore:
+          - "&7Dapatkan rank VIP permanen."
+        price: 100
+        currency: shards
+        commands:
+          - "lp user %player% parent set vip"

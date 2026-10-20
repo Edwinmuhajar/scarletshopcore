@@ -1,0 +1,43 @@
+name: ScarletShopCore
+version: 1.0.0
+main: com.example.scarletshopcore.ScarletShopCore
+api-version: '1.20'
+description: Shop, Money, Pay and Shards
+commands:
+  shop:
+    description: Buka shop
+    aliases: [store]
+    usage: /shop [kategori|reload]
+    permission: scarletshopcore.shop
+  money:
+    description: Lihat saldo uang
+    aliases: [bal, balance]
+    usage: /money [pemain]
+    permission: scarletshopcore.money
+  shards:
+    description: Lihat saldo shards
+    usage: /shards [pemain]
+    permission: scarletshopcore.shards
+  pay:
+    description: Kirim uang atau shards ke pemain lain
+    usage: /pay <pemain> <jumlah> [money|shards]
+    permission: scarletshopcore.pay
+  eco:
+    description: Admin - atur saldo pemain
+    usage: /eco <give|take|set> <pemain> <jumlah> [money|shards]
+    permission: scarletshopcore.admin
+permissions:
+  scarletshopcore.shop:
+    default: true
+  scarletshopcore.money:
+    default: true
+  scarletshopcore.shards:
+    default: true
+  scarletshopcore.pay:
+    default: true
+  scarletshopcore.balance.others:
+    description: Lihat saldo pemain lain
+    default: op
+  scarletshopcore.admin:
+    description: /eco dan /shop reload
+    default: op
